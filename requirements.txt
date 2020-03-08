@@ -14,3 +14,4 @@ scipy==1.4.1
 six==1.14.0
 sklearn==0.0
 sqlparse==0.3.1
+whitenoise==5.0.1
