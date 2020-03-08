@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+        crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,600" rel="stylesheet">
+    <title>Create project</title>
+    <link href="../../static/resources/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+    <!-- SIDE BAR HTML CODE-->
+    {% load static %}
+    <div class="sidebar">
+        <div class="logo-div">
+        </div>
+
+        <div class="list-div">
+            <ul>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span class="one">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-user-alt"></i>
+                        <span class="two">Profile</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class="fas fa-project-diagram"></i>
+                        <span class="three">Statistics</span>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+    <main class="main-section">
+        <header>
+            <i class="fas fa-bars js--bar"></i>
+
+            <h2>HR Dashboard</h2>
+            <a href="/precision" class="butn create-pro margin-header">
+                <span class="main-span">Feature Importance</span>
+            </a>
+
+            <a href="#" class="btn account-bal">
+                <span class="main-span">Number of Employees<span class="balance">: 830</span></span>
+            </a>
+
+            <div class="user-pro">
+                <i class="far fa-bell"></i>
+                <i class="far fa-user"></i>
+            </div>
+        </header>
+
+        <div class="fluid-container">
+            <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
+
+            <table id="myTable">
+                <tr>
+                    <th>Age</th>
+                    <th>DistanceFromHome</th>
+                    <th>MonthlyIncome</th>
+                    <th>NumCompaniesWorked</th>
+                    <th>PercentSalaryHike</th>
+                    <th>Attrition</th>
+                </tr>
+                {% for data in rows %}
+                <tr>
+                    <td>{{data.Age}}</td>
+                    <td>{{data.DistanceFromHome}}</td>
+                    <td>{{data.MonthlyIncome}}</td>
+                    <td>{{data.NumCompaniesWorked}}</td>
+                    <td>{{data.PercentSalaryHike}}</td>
+                    {% if data.Attrition == "Yes" %}
+                        <td class="green">
+                            <form action="/index_table/probability/" method="POST">
+                            {% csrf_token %}
+                                <input type="hidden" name="Age" value= {{ data.Age }}>
+                                <input type="hidden" name="DistanceFromHome" value= {{ data.DistanceFromHome }}>
+                                <input type="hidden" name="MonthlyIncome" value= {{ data.MonthlyIncome }}>
+                                <input type="hidden" name="NumCompaniesWorked" value= {{ data.NumCompaniesWorked }}>
+                                <input type="hidden" name="PercentSalaryHike" value= {{ data.PercentSalaryHike }}>
+                                <input type="hidden" name="StandardHours" value= {{ data.StandardHours }}>
+                                <input type="hidden" name="StockOptionLevel" value= {{ data.StockOptionLevel }}>
+                                <input type="hidden" name="TotalWorkingYears" value= {{ data.TotalWorkingYears }}>
+                                <input type="hidden" name="TrainingTimesLastYear" value= {{ data.TrainingTimesLastYear }}>
+                                <input type="hidden" name="YearsAtCompany" value= {{ data.YearsAtCompany }}>
+                                <input type="hidden" name="YearsSinceLastPromotion" value= {{ data.YearsSinceLastPromotion }}>
+                                <input type="hidden" name="YearsWithCurrManager" value= {{ data.YearsWithCurrManager }}>
+            
+                                <input type="submit" value="Yes" >
+                            </form>
+                        </td>
+                    {% else %}
+                        <td class="red">No</td>
+                    {% endif %}
+                </tr>
+                {% endfor %}
+            </table>
+
+            <a href="../../home/" class="butn create-pro">
+                <span class="main-span">Calculate New Attrition</span>
+            </a>
+            <a href="/precision" class="butn create-pro calc-fi">
+                <span class="main-span">Calculate Important Features</span>
+            </a>
+        </div>
+    </main>
+</body>
+
+<script src="../static/resources/jquery-3.3.1.min.js"></script>
+<script src="../static/./resources/script.js"></script>
+
+</html>

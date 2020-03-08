@@ -1,0 +1,186 @@
+<head>
+    <style>
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: #f4424e;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    text-rendering: optimizeLegibility;
+    text-size-adjust: 100%;
+    height: 100vh;
+    font-weight: 300;
+}
+
+h1 {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: aliceblue;
+    font-family: sans-serif;
+    font-weight: 300;
+    font-size: 45px;
+}
+
+h1 span {
+    text-transform: uppercase;
+}
+h2{
+    align-self: center;
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    font-family: sans-serif;
+    transform: translate(-50%, -50%);
+    color: aliceblue;
+}
+p{
+    padding: 0 20px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+td{
+    text-align: center;
+    padding: 8px;
+}
+
+th
+{
+    color:white;
+    text-align: center;
+    padding: 8px;
+}
+.fluid-container {
+    float: left;
+    margin-top: 12%;
+    margin-left:5%;
+    width: 90%;
+    overflow-x :auto;
+}
+
+
+.row{
+    margin: 0 auto;
+    max-width: 1140px;
+}
+
+.main-nav{
+    float: right;
+    list-style: none;
+    margin-top:2%;
+    margin-left:3%;
+}
+.main-nav li{
+        display:inline-block;
+        margin-left: 40px;
+}
+.main-nav li a:link, .main-nav li a:visited{
+    padding:18px 0;
+    color:#fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 110%;
+    border-bottom: 2px solid transparent;
+    -webkit-transition: border-bottom 0.2s;
+    transition: border-bottom 0.2s;
+}
+.main-nav li a:hover,.main-nav li a:active{
+    border-bottom: 2px solid #e67e22;
+}
+
+.btn:link,.btn:visited , input[type=submit]{
+    display:inline-block;
+    padding : 10px 30px;
+    font-weight:300;
+    text-decoration: none;
+    border-radius: 200px; 
+    transition: background-color 0.2s,border 0.2s, color 0.2s ;
+}
+.btn-full:link, .btn-full:visited{
+    background-color: #e67e22;
+    border : 1px solid #e67e22;
+    color: #fff;
+    margin-right:15px;
+}
+.btn:hover,btn:active,input[type=submit]:hover,input[type=submit]:active{
+    background-color: #cf6d17;
+}
+.btn-full:hover,.btn-full:active{
+    border : 1px solid #cf6d17;
+}
+.hero-text-box{
+    position: absolute;
+    width:1140px;
+    top: 80%;
+    left:46%;
+}
+
+
+    </style>
+</head>
+    
+<body>
+<header>
+    <nav>
+        <div class="row">
+            <ul class="main-nav">
+                <li><a href="/">Home</a></li>
+                <li><a href="/index_table">Employee Table</a></li>
+                <li><a href="/index_table">Back</a></li>
+        </div>
+    </nav>
+</header>
+
+
+
+<div class="fluid-container">
+    <table id="myTable">
+        <tr>
+            <th>Age</th>
+            <th>DistanceFromHome</th>
+            <th>MonthlyIncome</th>
+            <th>NumCompaniesWorked</th>
+            <th>PercentSalaryHike</th>
+            <th>StandardHours</th>
+            <th>StockOptionLevel</th>
+            <th>TotalWorkingYears</th>
+            <th>TrainingTimesLastYear</th>
+            <th>YearsAtCompany</th>
+            <th>NoOfPromotions</th>
+            <th>YearsWithCurrManager</th>
+        </tr>
+        <tr>
+            <td>{{emp_data.age}}</td>
+            <td>{{emp_data.distance}}</td>
+            <td>{{emp_data.income}}</td>
+            <td>{{emp_data.worked}}</td>
+            <td>{{emp_data.hike}}</td>
+            <td>{{emp_data.hours}}</td>
+            <td>{{emp_data.stocks}}</td>
+            <td>{{emp_data.years}}</td>
+            <td>{{emp_data.training}}</td>
+            <td>{{emp_data.years_company}}</td>
+            <td>{{emp_data.promo}}</td>
+            <td>{{emp_data.manager}}</td>
+        </tr>
+    </table>
+</div>
+
+<h1>Attrition Percentage </h1>
+<h2> 
+    {{ values }}
+</h2>
+
+<div class="hero-text-box">
+    <a class="btn btn-full" href="/index_table">Go Back</a>
+</div>
+
+</body>

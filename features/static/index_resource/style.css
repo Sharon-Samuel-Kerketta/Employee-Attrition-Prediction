@@ -1,0 +1,151 @@
+/* ----------------------------------------- */
+/* ----------BASIC-SETUP-------------------- */
+/* ----------------------------------------- */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-family: 'Raleway', sans-serif;
+    font-size: 20px;
+    text-rendering: optimizeLegibility;
+    font-weight: 300;
+    color: #fff;
+    scroll-behavior: smooth;
+}
+
+.clearfix::after {
+	content: "";
+    display: table;
+    clear: both;
+}
+
+header {
+   background-image: linear-gradient(rgba(230, 125, 34, 0.35), rgba(230, 125, 34, 0.35)), url("./back.jpg");
+   background-position: center;
+   background-size: cover;
+   height: 100vh;
+   color: #000;
+}
+
+nav img {
+    height: 100px;
+    float: left;
+    margin-top: 40px;
+    margin-left: 100px;
+}
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    transform: translate(-25%, -50%);
+}
+
+.hero-text h1 {
+    font-size: 450%;
+    font-weight: 100;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+}
+h2{
+    font-size: 155%;
+    font-weight: 400;
+    letter-spacing: 1px;
+    word-spacing: 3px;
+    margin-top: 50px;
+}
+
+h3 {
+    
+    font-size: 135%;
+    font-weight: 400;
+    letter-spacing: 1px;
+    word-spacing: 3px;
+}
+
+h1, h2,h3 {
+    color: #000;
+    margin-bottom: 10px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 30px;
+    background-color: #f39c12;
+    color: #fff;
+    font-weight: 500;
+    text-decoration: none;
+    margin-top: 10px;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #e74c3c;
+}
+
+nav ul {
+    float: right; 
+    margin: 30px 70px;
+    list-style: none;
+    text-transform: uppercase;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 5px; 
+    font-weight: 500;
+    transition: color 0.4s, border 0.3s;
+    border: 1px solid transparent;
+    padding: 6px 12px;
+}
+
+nav ul li:hover {
+    border: 1px solid #fff;
+    font-weight: 600;
+}
+
+section {
+    background-color: #fcfcfc;
+}
+
+section h1 {
+    color: #555;
+    font-weight: 300;
+    padding: 30px 0 10px 30px;
+    text-transform: capitalize;
+}
+
+hr {
+    margin-left: 30px;
+    width: 200px;
+    color: #e74c3c;
+    border: 1.5px solid #e74c3c;
+}
+
+#about p {
+    width: 80%;
+    margin-left: 30px;
+    margin-top: 25px;
+    color: #555;
+    line-height: 1.5;
+    letter-spacing: 0.3px;
+    word-spacing: 0.6px;
+}
+
+#about .btn {
+    padding: 6px 16px;
+    border-radius: 3px;
+    margin-left: 30px;
+    margin-top: 10px;
+}

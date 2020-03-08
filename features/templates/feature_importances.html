@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>EMPSAT</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        h1{
+            margin:20px 0;
+        }
+
+        body {
+            width: 100%;
+        }
+
+        .flex-box {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            width: 60%;
+            margin-left: 20%;
+            border-collapse: collapse;
+            margin-top: 50px;
+        }
+
+        .item {
+            width: 40%;
+            border: 1px solid orange;
+            border-collapse: collapse;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 align="center">Important Feature Extraction</h1>
+    <div class="flex-box">
+        <div class="item">
+            Feature
+        </div>
+        <div class="item">
+            Value
+        </div>
+        {% for key in values %}
+            {% for each in key %}
+            <div class="item">
+                {{ each }}   
+            </div>
+            {% endfor %}
+        {% endfor %}
+    </div>
+</body>
+
+</html>

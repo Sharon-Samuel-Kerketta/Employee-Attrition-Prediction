@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+        crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,600" rel="stylesheet">
+    <title>Create project</title>
+    <link href="../../static/resources/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <h1 >Attrition Values</h1>
+    <div class="fluid-container">   
+        <main class="main-section">
+            <table id="myTable">
+                <tr>
+                    <td>Features</td>
+                    <td>Values</td>
+                </tr>
+                {% for key in values %}
+                    {% for each in key %}
+                    <tr>
+                        <td>{{ each }}</td>
+                            
+                    </tr>
+                    {% endfor %}
+                {% endfor %}
+            </table>
+            <a href="../home/" class="butn create-pro">
+                <span class="main-span">Back</span>
+            </a>
+        </main>
+    </div>
+</body>
+</html>
