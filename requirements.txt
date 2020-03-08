@@ -1,5 +1,5 @@
 asgiref==3.2.3
-Django==3.0
+Django==3.0.3
 imbalanced-learn==0.6.2
 imblearn==0.0
 joblib==0.14.1
