@@ -25,7 +25,7 @@ SECRET_KEY = 's-*uhi^!2ug1^$a!-5ao@b5#51limg&y9)@b90yfl2mv3j2%5d'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['employee-attrition-prediction.herokuapp.com/','127.0.0.1']
+ALLOWED_HOSTS = ['employee-attrition-prediction.herokuapp.com','127.0.0.1']
 
 
 # Application definition
