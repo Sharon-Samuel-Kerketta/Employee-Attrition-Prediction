@@ -1,11 +1,13 @@
 asgiref==3.2.3
 Django==3.0.3
+django-cors-headers==3.2.1
 gunicorn==20.0.4
 imbalanced-learn==0.6.2
 imblearn==0.0
 joblib==0.14.1
 numpy==1.18.1
 pandas==1.0.1
+pkg-resources==0.0.0
 python-dateutil==2.8.1
 pytz==2019.3
 scikit-learn==0.22.2.post1
